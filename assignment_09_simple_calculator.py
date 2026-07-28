@@ -68,3 +68,100 @@
 # YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
 
+def show_menu():
+    print("\n============================")
+    print("     SIMPLE CALCULATOR")
+    print("============================")
+    print("1. Addition")
+    print("2. Subtraction")
+    print("3. Multiplication")
+    print("4. Division")
+    print("5. Modulus")
+    print("6. Exponentiation")
+    print("7. Quit")
+
+
+def add(a, b):
+    return a + b
+
+
+def subtract(a, b):
+    return a - b
+
+
+def multiply(a, b):
+    return a * b
+
+
+def divide(a, b):
+    if b == 0:
+        return None  
+    return round(a / b, 2)
+
+
+def modulus(a, b):
+    if b == 0:
+        return None
+    return a % b
+
+
+def exponent(a, b):
+    return a ** b
+
+
+def get_two_numbers():
+    first = float(input("Enter first number : "))
+    second = float(input("Enter second number: "))
+    return first, second
+
+
+def main():
+    while True:
+        show_menu()
+        choice = input("Select an operation (1-7): ")
+
+        if choice == "7":
+            print("Goodbye!")
+            break
+
+        elif choice == "1":
+            a, b = get_two_numbers()
+            result = add(a, b)
+            print(f"Result: {a} + {b} = {result}")
+
+        elif choice == "2":
+            a, b = get_two_numbers()
+            result = subtract(a, b)
+            print(f"Result: {a} - {b} = {result}")
+
+        elif choice == "3":
+            a, b = get_two_numbers()
+            result = multiply(a, b)
+            print(f"Result: {a} * {b} = {result}")
+
+        elif choice == "4":
+            a, b = get_two_numbers()
+            result = divide(a, b)
+            if result is None:
+                print("Error: Cannot divide by zero.")
+            else:
+                print(f"Result: {a} / {b} = {result}")
+
+        elif choice == "5":
+            a, b = get_two_numbers()
+            result = modulus(a, b)
+            if result is None:
+                print("Error: Cannot perform modulus with zero.")
+            else:
+                print(f"Result: {a} % {b} = {result}")
+
+        elif choice == "6":
+            a, b = get_two_numbers()
+            result = exponent(a, b)
+            print(f"Result: {a} ** {b} = {result}")
+
+        else:
+            print("Error: Please enter a number from 1 to 7.")
+
+
+main()
