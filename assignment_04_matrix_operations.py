@@ -56,35 +56,36 @@
 #
 
 #
+# ============================================================================
+#YOUR CODE BELOW — remove the # symbols from the scaffold and fill it in
 # =============================================================================
- def read_matrix(rows, cols, label=""):
+
+def read_matrix(rows, cols, label=""):
     print(f"Enter {label} matrix:")
     matrix = []
     for i in range(rows):
         row_input = input(f"Enter row {i + 1}: ")
-        row = row_input.split()          
-        row = [int(num) for num in row] 
+        row = row_input.split()         
+        row = [int(num) for num in row]  
         matrix.append(row)
     return matrix
 
 
 def display_matrix(matrix):
     for row in matrix:
-       
+        # join the numbers in the row with spaces, nicely aligned
         row_text = "  ".join(f"{num:>4}" for num in row)
         print(row_text)
 
 
 def transpose_matrix(matrix, rows, cols):
-   
-    result = []
+    
     for i in range(cols):
         new_row = []
         for j in range(rows):
             new_row.append(0)
         result.append(new_row)
 
-    
     for i in range(rows):
         for j in range(cols):
             result[j][i] = matrix[i][j]
@@ -172,5 +173,3 @@ def main():
 
 
 main()
-# =============================================================================
-
